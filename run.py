@@ -57,7 +57,7 @@ if __name__ == "__main__":
     parser.add_argument(
         '--model_path',
         type=str,
-        default='CompVis/stable-diffusion-v1-5',
+        default='CompVis/stable-diffusion-v1-4',
         help='The path to the model (this will download the model if the path doesn\'t exist)'
     )
 
