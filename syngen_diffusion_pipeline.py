@@ -90,7 +90,7 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
             prompt: Union[str, List[str]] = None,
             height: Optional[int] = None,
             width: Optional[int] = None,
-            num_inference_steps: int = 50,
+            num_inference_steps: int = 10,
             guidance_scale: float = 7.5,
             negative_prompt: Optional[Union[str, List[str]]] = None,
             num_images_per_prompt: Optional[int] = 1,
@@ -177,6 +177,9 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
             list of `bool`s denoting whether the corresponding generated image likely represents "not-safe-for-work"
             (nsfw) content, according to the `safety_checker`.
         """
+
+        print("In Call Function")
+
         # 0. Default height and width to unet
         height = height or self.unet.config.sample_size * self.vae_scale_factor
         width = width or self.unet.config.sample_size * self.vae_scale_factor
