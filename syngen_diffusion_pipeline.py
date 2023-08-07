@@ -230,9 +230,11 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
             negative_prompt_embeds=negative_prompt_embeds,
         )
         # print(prompt_embeds[0])
-        # print(prompt_embeds[1])
-        print(prompt_embeds[0] == temp_prompt_embeds[0])
-        print(prompt_embeds[1] == temp_prompt_embeds[1])
+        print(prompt_embeds[1])
+        # print(prompt_embeds[0] == temp_prompt_embeds[0])
+        # print(prompt_embeds[1] == temp_prompt_embeds[1])
+        prompt_embeds[1] = 0
+        print(prompt_embeds[1])
 
         # 4. Prepare timesteps
         self.scheduler.set_timesteps(num_inference_steps, device=device)
