@@ -229,6 +229,8 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
             prompt_embeds=prompt_embeds,
             negative_prompt_embeds=negative_prompt_embeds,
         )
+        print(prompt_embeds[0])
+        print(prompt_embeds[1])
         print(prompt_embeds[0] == temp_prompt_embeds[0])
         print(prompt_embeds[1] == temp_prompt_embeds[1])
 
