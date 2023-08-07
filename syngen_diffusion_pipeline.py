@@ -220,7 +220,17 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
             prompt_embeds=prompt_embeds,
             negative_prompt_embeds=negative_prompt_embeds,
         )
-        print(prompt_embeds.shape)
+        temp_prompt_embeds = self._encode_prompt(
+            prompt,
+            device,
+            num_images_per_prompt,
+            do_classifier_free_guidance,
+            negative_prompt="dark",
+            prompt_embeds=prompt_embeds,
+            negative_prompt_embeds=negative_prompt_embeds,
+        )
+        print(prompt_embeds[0] == temp_prompt_embeds[0])
+        print(prompt_embeds[1] == temp_prompt_embeds[1])
 
         # 4. Prepare timesteps
         self.scheduler.set_timesteps(num_inference_steps, device=device)
