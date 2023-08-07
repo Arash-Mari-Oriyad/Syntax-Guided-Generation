@@ -231,8 +231,8 @@ class SynGenDiffusionPipeline(StableDiffusionPipeline):
         )
         print(prompt_embeds[0])
         print(prompt_embeds[1])
-        print(prompt_embeds[0] == temp_prompt_embeds[0])
-        print(prompt_embeds[1] == temp_prompt_embeds[1])
+        # print(prompt_embeds[0] == temp_prompt_embeds[0])
+        # print(prompt_embeds[1] == temp_prompt_embeds[1])
 
         # 4. Prepare timesteps
         self.scheduler.set_timesteps(num_inference_steps, device=device)
